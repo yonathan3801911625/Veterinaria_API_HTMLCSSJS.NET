@@ -7,10 +7,13 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Cliente
+    Mascota
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+
+
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -22,7 +25,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="g-sidenav-show bg-gray-100">
+<body class="g-sidenav-show bg-gray-100" onload="consultarMascota()">
   <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
     <!-- Sidenav Top -->
     <nav class="navbar navbar-expand-lg flex-wrap top-0 px-0 py-0 fondoCuadroResalteTitulo">
@@ -436,102 +439,72 @@
             <div class="card-header border-bottom pb-0 fondoGris">
               <div class="d-sm-flex align-items-center">
                 <div>
-                  <h6 class="font-weight-semibold text-lg mb-0 azulCuadroResalte">Cliente</h6>
-                  <p class="text-sm text-dark ">Módulo de Crear</p>
+                  <h6 class="font-weight-semibold text-lg mb-0 azulCuadroResalte">Mascota</h6>
+                  <p class="text-sm text-dark ">Crear, consultar, actualizar y eliminar mascotas</p>
                 </div>
                 <div class="ms-auto d-flex">
                   <!-- <button type="button" class="btn btn-sm btn-white me-2">
                     View all
                   </button> -->
-                  <a type="button" class="btn btn-sm colorButton btn-icon d-flex align-items-center me-2" href="cliente.html">
+                  <a type="button" class="btn btn-sm colorButton btn-icon d-flex align-items-center me-2" href="mascotaAdd.html">
                     <!-- <span class="btn-inner--icon">
                       <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="d-block me-2">
                         <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
                       </svg>
                     </span> -->
-                    <span class="btn-inner--text azulCuadroResalte">Atrás</span>
+                    <span class="btn-inner--text azulCuadroResalte">Add Mascota</span>
                   </a>
                 </div>
               </div>
             </div>
-
-
-
-            
             <div class="card-body px-0 py-0">
+              <!-- <div class="border-bottom py-3 px-3 d-sm-flex align-items-center">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable1" autocomplete="off" checked>
+                  <label class="btn btn-white px-3 mb-0" for="btnradiotable1">All</label>
+                  <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable2" autocomplete="off">
+                  <label class="btn btn-white px-3 mb-0" for="btnradiotable2">Monitored</label>
+                  <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable3" autocomplete="off">
+                  <label class="btn btn-white px-3 mb-0" for="btnradiotable3">Unmonitored</label>
+                </div>
+                <div class="input-group w-sm-25 ms-auto">
+                  <span class="input-group-text text-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+                    </svg>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+              </div> -->
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0" id="tablaListarMascota">
+                  <thead class="fondoCuadroResalteTitulo ">
+                    <tr>
+                      <th class="azulCuadroResalte text-sm-center font-weight-semibold opacity-9">Codigo</th>
+                      <th class="azulCuadroResalte text-sm-center font-weight-semibold opacity-9">Nombre</th>
+                      <th class="azulCuadroResalte text-sm-center font-weight-semibold opacity-9">Edad</th>
+                      <th class="azulCuadroResalte text-sm-center font-weight-semibold opacity-9">Tipo</th>
+                      <th class="azulCuadroResalte text-sm-center font-weight-semibold opacity-9">Accion</th>
+                      <!-- <th class="text-secondary opacity-7"></th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
 
 
 
-<br>
-<form class="container" method="post" name="formclienteADD" id="formclienteADD">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="number" class="form-control" id="cedulaC" placeholder="Cedula">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="text" placeholder="Nombre" class="form-control" id="nombreC">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="text" placeholder="Apellido" class="form-control" id="apellidoC">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="form-group">
-        <div class="input-group">
-          <input type="number" class="form-control" placeholder="Edad" id="edadC">
-          <span class="input-group-text text-body end-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.38a48.474 48.474 0 00-6-.37c-2.032 0-4.034.125-6 .37m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.17c0 .62-.504 1.124-1.125 1.124H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265zm-3 0a.375.375 0 11-.53 0L9 2.845l.265.265zm6 0a.375.375 0 11-.53 0L15 2.845l.265.265z" />
-            </svg>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="text" placeholder="Direccion" class="form-control" id="direccionC">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="number" placeholder="Telefono" class="form-control" id="telefonoC">
-      </div>
-    </div>
-  </div>
-</form>
-
-<div class="border-bottom py-3 px-3 d-sm-flex align-items-center">
-  <!-- <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-    <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable1" autocomplete="off" checked>
-    <label class="btn btn-white px-3 mb-0" for="btnradiotable1">All</label>
-    <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable2" autocomplete="off">
-    <label class="btn btn-white px-3 mb-0" for="btnradiotable2">Monitored</label>
-    <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable3" autocomplete="off">
-    <label class="btn btn-white px-3 mb-0" for="btnradiotable3">Unmonitored</label>
-  </div> -->
-  <div class="input-group w-sm-25 ms-auto">
-    <!-- <span class="input-group-text text-body">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
-      </svg>
-    </span>
-    <input type="text" class="form-control" placeholder="Search"> -->
-
-  </div>
-  <div>
-    <button type="submit" class="btn btn-outline-dark" onclick="guardarCliente()">Guardar</button>
-  </div>
-
-</div>
 
 
+                                        
+
+
+
+
+
+
+
+                  </tbody>
+                </table>
+              </div>
               <!-- <div class="border-top py-3 px-3 d-flex align-items-center">
                 <p class="font-weight-semibold mb-0 text-dark text-sm">Page 1 of 10</p>
                 <div class="ms-auto">
@@ -544,8 +517,8 @@
         </div>
 
 
-
-
+        <!-- <div id="datosUsuario" >
+        </div> -->
 
 
 
@@ -674,3 +647,113 @@
 </body>
 
 </html>
+
+
+    <!-- Modal -->
+    <!-- <div class="col-md-4"> -->
+      <!-- <button type="button" class="btn btn-block btn-white mb-3" data-bs-toggle="modal" data-bs-target="#modal-form">Form</button> -->
+      <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="col-12">
+              <div class="card border shadow-xs mb-4 ">
+                <div class="card-header border-bottom pb-0 fondoGris">
+                  <div class="d-sm-flex align-items-center">
+                    <div>
+                      <h6 class="font-weight-semibold text-lg mb-0 azulCuadroResalte">Mascota</h6>
+                      <p class="text-sm text-dark ">Módulo de Edición</p>
+                    </div>
+                    <div class="ms-auto d-flex">
+                      <!-- <button type="button" class="btn btn-sm btn-white me-2">
+                        View all
+                      </button> -->
+                      <a type="button" class="btn btn-sm colorButton btn-icon d-flex align-items-center me-2"
+                        href="mascota.html">
+                        <!-- <span class="btn-inner--icon">
+                          <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="d-block me-2">
+                            <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
+                          </svg>
+                        </span> -->
+                        <span class="btn-inner--text azulCuadroResalte">Atrás</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+    
+    
+    
+    
+                <div class="card-body px-0 py-0">
+    
+    
+    
+                  <br>
+                  <form class="container" method="post" name="formMascotaEDIT" id="formMascotaEDIT">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="number" class="form-control" id="codigoUpdateM" placeholder="Codigo">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" placeholder="Nombre" class="form-control" id="nombreUpdateM">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Edad" id="edadUpdateM">
+                            <span class="input-group-text text-body end-0">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.38a48.474 48.474 0 00-6-.37c-2.032 0-4.034.125-6 .37m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.17c0 .62-.504 1.124-1.125 1.124H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265zm-3 0a.375.375 0 11-.53 0L9 2.845l.265.265zm6 0a.375.375 0 11-.53 0L15 2.845l.265.265z" />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="Tipo" class="form-control" id="tipoUpdateM">
+                        </div> -->
+                        <select class="form-select" aria-label="Default select example" id="tipoUpdateM">
+                          <option value="" selected disabled>Tipo</option>
+                          <option value="gato">Gato</option>
+                          <option value="perro">Perro</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+    
+                  <div class="border-bottom py-3 px-3 d-sm-flex align-items-center">
+    
+                    <div class="input-group w-sm-25 ms-auto">
+    
+    
+                    </div>
+                    <div>
+                      <button type="submit" class="btn btn-outline-dark" onclick="actualizarMascota()">Actualizar</button>
+                    </div>
+    
+                  </div>
+    
+    
+                  <!-- <div class="border-top py-3 px-3 d-flex align-items-center">
+                    <p class="font-weight-semibold mb-0 text-dark text-sm">Page 1 of 10</p>
+                    <div class="ms-auto">
+                      <button class="btn btn-sm btn-white mb-0">Previous</button>
+                      <button class="btn btn-sm btn-white mb-0">Next</button>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+

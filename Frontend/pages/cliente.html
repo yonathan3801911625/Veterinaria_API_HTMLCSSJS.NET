@@ -221,10 +221,10 @@
           <div class="col-auto my-auto">
             <div class="h-100">
               <h3 class="mb-0 font-weight-bold azulCuadroResalte">
-                Super Admin 
+                Veterinaria ACME
               </h3>
               <p class="mb-0">
-                superadmin@mail.com
+                veterinariaacme@mail.com
               </p>
             </div>
           </div>
@@ -477,7 +477,7 @@
                 </div>
               </div> -->
               <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0" id="tablaListar">
+                <table class="table align-items-center mb-0" id="tablaListarCliente">
                   <thead class="fondoCuadroResalteTitulo ">
                     <tr>
                       <th class="azulCuadroResalte text-sm-center font-weight-semibold opacity-9">Cedula</th>
@@ -519,11 +519,10 @@
         </div>
 
 
-        <div id="datosUsuario" >
-        </div>
+        <!-- <div id="datosUsuario" >
+        </div> -->
 
 
-        <p>Create a p element with some text:</p>
 
         
       </div>
@@ -654,7 +653,7 @@
 
     <!-- Modal -->
     <!-- <div class="col-md-4"> -->
-      <button type="button" class="btn btn-block btn-white mb-3" data-bs-toggle="modal" data-bs-target="#modal-form">Form</button>
+      <!-- <button type="button" class="btn btn-block btn-white mb-3" data-bs-toggle="modal" data-bs-target="#modal-form">Form</button> -->
       <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -695,17 +694,17 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="cedulaUpdate" placeholder="Cedula">
+                          <input type="number" class="form-control" id="cedulaUpdateC" placeholder="Cedula">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <input type="text" placeholder="Nombre" class="form-control" id="nombreUpdate">
+                          <input type="text" placeholder="Nombre" class="form-control" id="nombreUpdateC">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <input type="text" placeholder="Apellido" class="form-control" id="apellidoUpdate">
+                          <input type="text" placeholder="Apellido" class="form-control" id="apellidoUpdateC">
                         </div>
                       </div>
                     </div>
@@ -713,7 +712,7 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <div class="input-group">
-                            <input type="number" class="form-control" placeholder="Edad" id="edadUpdate">
+                            <input type="number" class="form-control" placeholder="Edad" id="edadUpdateC">
                             <span class="input-group-text text-body end-0">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none"
                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -726,12 +725,12 @@
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <input type="text" placeholder="Direccion" class="form-control" id="direccionUpdate">
+                          <input type="text" placeholder="Direccion" class="form-control" id="direccionUpdateC">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <input type="text" placeholder="Telefono" class="form-control" id="telefonoUpdate">
+                          <input type="number" placeholder="Telefono" class="form-control" id="telefonoUpdateC">
                         </div>
                       </div>
                     </div>

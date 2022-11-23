@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Cliente
+    Mascota
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700" rel="stylesheet" />
@@ -436,14 +436,14 @@
             <div class="card-header border-bottom pb-0 fondoGris">
               <div class="d-sm-flex align-items-center">
                 <div>
-                  <h6 class="font-weight-semibold text-lg mb-0 azulCuadroResalte">Cliente</h6>
+                  <h6 class="font-weight-semibold text-lg mb-0 azulCuadroResalte">Mascota</h6>
                   <p class="text-sm text-dark ">Módulo de Crear</p>
                 </div>
                 <div class="ms-auto d-flex">
                   <!-- <button type="button" class="btn btn-sm btn-white me-2">
                     View all
                   </button> -->
-                  <a type="button" class="btn btn-sm colorButton btn-icon d-flex align-items-center me-2" href="cliente.html">
+                  <a type="button" class="btn btn-sm colorButton btn-icon d-flex align-items-center me-2" href="mascota.html">
                     <!-- <span class="btn-inner--icon">
                       <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="d-block me-2">
                         <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
@@ -463,29 +463,24 @@
 
 
 <br>
-<form class="container" method="post" name="formclienteADD" id="formclienteADD">
+<form class="container" method="post" name="formMascotaADD" id="formMascotaADD">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
-        <input type="number" class="form-control" id="cedulaC" placeholder="Cedula">
+        <input type="number" class="form-control" id="codigoM" placeholder="Codigo">
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
-        <input type="text" placeholder="Nombre" class="form-control" id="nombreC">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="text" placeholder="Apellido" class="form-control" id="apellidoC">
+        <input type="text" placeholder="Nombre" class="form-control" id="nombreM">
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <div class="input-group">
-          <input type="number" class="form-control" placeholder="Edad" id="edadC">
+          <input type="number" class="form-control" placeholder="Edad" id="edadM">
           <span class="input-group-text text-body end-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.38a48.474 48.474 0 00-6-.37c-2.032 0-4.034.125-6 .37m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.17c0 .62-.504 1.124-1.125 1.124H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265zm-3 0a.375.375 0 11-.53 0L9 2.845l.265.265zm6 0a.375.375 0 11-.53 0L15 2.845l.265.265z" />
@@ -494,15 +489,32 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="text" placeholder="Direccion" class="form-control" id="direccionC">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="number" placeholder="Telefono" class="form-control" id="telefonoC">
-      </div>
+    <div class="col-md-6">
+      <!-- <div class="form-group">
+        <input type="text" placeholder="Tipo" class="form-control" id="tipoM">
+      </div> -->
+      <select class="form-select" aria-label="Default select example" id="tipoM">
+        <option value="" selected disabled>Tipo</option>
+        <option value="gato">Gato</option>
+        <option value="perro">Perro</option>
+      </select>
+      <!-- <div class="dropdown">
+        <a href="javascript:;" class="btn bg-gradient-dark dropdown-toggle " data-bs-toggle="dropdown" id="navbarDropdownMenuLink2">
+          Tipo
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+            <li>
+                <a class="dropdown-item" href="#" class="form-control" id="gatoM">
+                  <img src="https://cdn-icons-png.flaticon.com/512/2171/2171991.png" width="50" height="50"/> Gato
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#" class="form-control" id="perroM">
+                  <img src="https://cdn-icons-png.flaticon.com/512/1662/1662923.png" width="50" height="50"/> Perro
+                </a>
+            </li>
+        </ul>
+      </div> -->
     </div>
   </div>
 </form>
@@ -526,7 +538,7 @@
 
   </div>
   <div>
-    <button type="submit" class="btn btn-outline-dark" onclick="guardarCliente()">Guardar</button>
+    <button type="submit" class="btn btn-outline-dark" onclick="guardarMascota()">Guardar</button>
   </div>
 
 </div>
@@ -671,6 +683,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Corporate UI Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/corporate-ui-dashboard.min.js?v=1.0.0"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 
 </html>

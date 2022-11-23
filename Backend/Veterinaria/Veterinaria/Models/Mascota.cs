@@ -7,12 +7,12 @@ namespace Veterinaria.Models
     public class Mascota
     {
 
-        String codigo { set; get; }
+        private String codigo { set; get; }
 
-        String nombre { set; get; }
+        private String nombre { set; get; }
 
-        int edad { set; get; }
-        String tipo { set; get; }
+        private int edad { set; get; }
+        private String tipo { set; get; }
 
 
         NpgsqlConnection cone;

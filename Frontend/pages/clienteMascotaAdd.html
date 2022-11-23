@@ -436,14 +436,14 @@
             <div class="card-header border-bottom pb-0 fondoGris">
               <div class="d-sm-flex align-items-center">
                 <div>
-                  <h6 class="font-weight-semibold text-lg mb-0 azulCuadroResalte">Cliente</h6>
+                  <h6 class="font-weight-semibold text-lg mb-0 azulCuadroResalte">Cliente Mascota</h6>
                   <p class="text-sm text-dark ">Módulo de Crear</p>
                 </div>
                 <div class="ms-auto d-flex">
                   <!-- <button type="button" class="btn btn-sm btn-white me-2">
                     View all
                   </button> -->
-                  <a type="button" class="btn btn-sm colorButton btn-icon d-flex align-items-center me-2" href="cliente.html">
+                  <a type="button" class="btn btn-sm colorButton btn-icon d-flex align-items-center me-2" href="clienteMascota.html">
                     <!-- <span class="btn-inner--icon">
                       <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="d-block me-2">
                         <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
@@ -463,45 +463,35 @@
 
 
 <br>
-<form class="container" method="post" name="formclienteADD" id="formclienteADD">
+<form class="container" method="post" name="formclienteMascotaADD" id="formclienteMascotaADD">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="form-group">
-        <input type="number" class="form-control" id="cedulaC" placeholder="Cedula">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="text" placeholder="Nombre" class="form-control" id="nombreC">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="text" placeholder="Apellido" class="form-control" id="apellidoC">
+        <input type="number" class="form-control" id="codigo" placeholder="Codigo">
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
-        <div class="input-group">
-          <input type="number" class="form-control" placeholder="Edad" id="edadC">
-          <span class="input-group-text text-body end-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.38a48.474 48.474 0 00-6-.37c-2.032 0-4.034.125-6 .37m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.17c0 .62-.504 1.124-1.125 1.124H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265zm-3 0a.375.375 0 11-.53 0L9 2.845l.265.265zm6 0a.375.375 0 11-.53 0L15 2.845l.265.265z" />
-            </svg>
-          </span>
-        </div>
+        <input type="number" placeholder="Cedula Cliente" class="form-control" id="cedulaCliente">
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
-        <input type="text" placeholder="Direccion" class="form-control" id="direccionC">
+        <input type="text" placeholder="Nombre Cliente" class="form-control" id="nombreCliente">
       </div>
     </div>
-    <div class="col-md-4">
+  </div>
+  <div class="row">
+    <div class="col-md-6">
       <div class="form-group">
-        <input type="number" placeholder="Telefono" class="form-control" id="telefonoC">
+        <input type="number" placeholder="Codigo Mascota" class="form-control" id="codigoMascota">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <input type="text" placeholder="Nombre Mascota" class="form-control" id="nombreMascota">
       </div>
     </div>
   </div>
@@ -526,7 +516,7 @@
 
   </div>
   <div>
-    <button type="submit" class="btn btn-outline-dark" onclick="guardarCliente()">Guardar</button>
+    <button type="submit" class="btn btn-outline-dark" onclick="guardarClienteMascota()">Guardar</button>
   </div>
 
 </div>
@@ -657,7 +647,7 @@
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../assets/js/custom/RequestAPI.js"></script>
+  <script src="../assets/js/custom/RequestAPI1.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

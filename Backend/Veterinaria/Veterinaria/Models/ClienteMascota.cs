@@ -4,18 +4,15 @@ using System.Dynamic;
 
 namespace Veterinaria.Models
 {
-    public class Cliente
+    public class ClienteMascota
     {
 
-        
 
-        private String cedula { set; get; }
-        private String nombre { set; get; }
-        private String apellido { set; get; }
-
-        private int edad { set; get; }
-        private String direccion { set; get; }
-        private String telefono { set; get; }
+        private String codigo { set; get; }
+        private String cedulaCliente { set; get; }
+        private String nombreCliente { set; get; }
+        private String codigoMascota { set; get; }
+        private String nombreMascota { set; get; }
 
 
         NpgsqlConnection cone;
@@ -26,13 +23,13 @@ namespace Veterinaria.Models
             this.cone.Open();
         }
 
-        public String ingresarCliente()
+        public String ingresarClienteMascota()
         {
 
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand();
-                String Sql = "INSERT INTO cliente VALUES('" + this.cedula + "', '" + this.nombre + "', '" + this.apellido + "', " + this.edad + ", '" + this.direccion + "', '" + this.telefono + "')";
+                String Sql = "INSERT INTO clientemascota VALUES('" + this.codigo + "', '" + this.cedulaCliente + "', '" + this.nombreCliente + "', '" + this.codigoMascota + "', '" + this.nombreMascota + "')";
                 new NpgsqlCommand(Sql, this.cone).ExecuteNonQuery();
                 return "Datos Guardados :)";
             }
@@ -43,13 +40,13 @@ namespace Veterinaria.Models
             }
         }
 
-        public String deleteCliente()
+        public String deleteClienteMascota()
         {
 
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand();
-                String Sql = "DELETE from cliente where cedula = '" + this.cedula + "'";
+                String Sql = "DELETE from clientemascota where codigo = '" + this.codigo + "'";
                 new NpgsqlCommand(Sql, this.cone).ExecuteNonQuery();
                 return "Dato Eliminado :)";
             }
@@ -61,13 +58,13 @@ namespace Veterinaria.Models
         }
 
 
-        public String updateCliente()
+        public String updateClienteMascota()
         {
 
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand();
-                String Sql = "UPDATE cliente set nombre = '" + this.nombre + "', apellido = '" + this.apellido + "', edad = " + this.edad + ", direccion = '" + this.direccion + "', telefono = '" + this.telefono + "' where cedula = '" + this.cedula + "'";
+                String Sql = "UPDATE clientemascota set cedulaCliente = '" + this.cedulaCliente + "', nombreCliente = '" + this.nombreCliente + "', codigoMascota = '" + this.codigoMascota + "', nombreMascota = '" + this.nombreMascota + "' where codigo = '" + this.codigo + "'";
                 cmd = new NpgsqlCommand(Sql, this.cone);
                 cmd.ExecuteNonQuery();
                 return "Dato Actualizado :)";
@@ -81,25 +78,24 @@ namespace Veterinaria.Models
 
 
 
-        public String listCliente()
+        public String listClienteMascota()
         {
 
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand();
-                String Sql = "SELECT * from cliente";
+                String Sql = "SELECT * from clientemascota";
                 var reader = new NpgsqlCommand(Sql, this.cone).ExecuteReader();
                 var todo = new List<dynamic>();
                 while (reader.Read())
                 {
                     dynamic dynamic = new ExpandoObject();
 
-                    dynamic.cedula = reader.GetString(0);
-                    dynamic.nombre = reader.GetString(1);
-                    dynamic.apellido = reader.GetString(2);
-                    dynamic.edad = reader.GetInt16(3);
-                    dynamic.direccion = reader.GetString(4);
-                    dynamic.telefono = reader.GetString(5);
+                    dynamic.codigo = reader.GetString(0);
+                    dynamic.cedulaCliente = reader.GetString(1);
+                    dynamic.nombreCliente = reader.GetString(2);
+                    dynamic.codigoMascota = reader.GetInt16(3);
+                    dynamic.nombreMascota = reader.GetString(4);
                     todo.Add(dynamic);
 
                 }
@@ -117,15 +113,15 @@ namespace Veterinaria.Models
 
 
 
-        public Cliente(string ced, string nom, string ape, int eda, string dir, string tel)
+        public ClienteMascota(string cod, string cedcli, string nomcli, string codmas, string nommas)
         {
-            this.cedula = ced;
-            this.nombre = nom;
-            this.apellido = ape;
-            this.edad = eda;
-            this.direccion = dir;
-            this.telefono = tel;
+            this.codigo = cod;
+            this.cedulaCliente = cedcli;
+            this.nombreCliente = nomcli;
+            this.codigoMascota = codmas;
+            this.nombreMascota = nommas;
         }
+
 
     }
 }
